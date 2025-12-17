@@ -16,7 +16,7 @@ public:
    size_t size;
    size_t capacity;
    
-   Array(size_t size);
+   Array(size_t cap);
    Array(const Array& arr);
    Array(initializer_list<T> list);
 

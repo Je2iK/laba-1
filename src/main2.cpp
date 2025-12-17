@@ -52,43 +52,32 @@ int main(int argc, char* argv[]) {
         int index;
         ss >> value >> index;
         arr.arrayAddIndex(arr, index, value);
-        cout << "[ARR] Добавлено \"" << value << "\" в индекс " << index << endl;
-        arr.saveToFile();
     }
     else if (cmd == "MPUSHEND") {
         string value;
         ss >> value;
         arr.arrayAddEnd(arr, value);
-        cout << "[ARR] Добавлено \"" << value << "\"" << endl;
-        arr.saveToFile();   
     }
     else if (cmd == "MDELI") {
         int index;
         ss >> index;
         arr.arrayDeleteIndex(arr, index);
-        cout << "[ARR] Удалён индекс " << index << endl;
-        arr.saveToFile();
     }
     else if (cmd == "MDELEND") {
         arr.arrayDeleteEnd(arr);
-        cout << "[ARR] Удалён конец" << endl;
-        arr.saveToFile();
     }
     else if (cmd == "MGET") {
         int index;
         ss >> index;
-        cout << "[ARR] Элемент по индексу " << index << ": " << arr.arrayGet(arr, index) << endl;
     }
     else if (cmd == "MSET") {
         string value;
         int index;
         ss >> value >> index;
         arr.arraySet(arr, index, value);
-        cout << "[ARR] Заменён элемент по индексу " << index << " на \"" << value << "\"" << endl;
-        arr.saveToFile();
     }
     else if (cmd == "MLEN") {
-        cout << "[ARR] Длина массива: " << arr.arrayLength(arr) << endl;
+        cout << arr.arrayLength(arr) << endl;
     }
     else if (cmd == "MREAD") {
         arr.arrayRead(arr);
@@ -99,60 +88,42 @@ int main(int argc, char* argv[]) {
         string value;
         ss >> value;
         sll.addHead(value);
-        cout << "[SLL] Вставка в голову: \"" << value << "\"" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLADDT") {
         string value;
         ss >> value;
         sll.addTail(value);
-        cout << "[SLL] Вставка в хвост: \"" << value << "\"" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLADDF") {
         string value, target;
         ss >> value >> target;
         sll.addBefore(target, value);
-        cout << "[SLL] Вставка \"" << value << "\" перед \"" << target << "\"" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLADDB") {
         string value, target;
         ss >> value >> target;
         sll.addAfter(target, value);
-        cout << "[SLL] Вставка \"" << value << "\" после \"" << target << "\"" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLDELH") {
         sll.deleteHead();
-        cout << "[SLL] Удаление головы" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLDELT") {
         sll.deleteTail();
-        cout << "[SLL] Удаление хвоста" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLDELF") {
         string target;
         ss >> target;
         sll.deleteBefore(target);
-        cout << "[SLL] Удаление перед \"" << target << "\"" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLDELB") {
         string target;
         ss >> target;
         sll.deleteAfter(target);
-        cout << "[SLL] Удаление после \"" << target << "\"" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLDELV") {
         string value;
         ss >> value;
         sll.deleteValue(value);
-        cout << "[SLL] Удаление значения \"" << value << "\"" << endl;
-        sll.saveToFile();
     }
     else if (cmd == "SLLREAD") {
         sll.read();
@@ -160,7 +131,6 @@ int main(int argc, char* argv[]) {
     else if (cmd == "SLLFINDV") {
         string value;
         ss >> value;
-        cout << "[SLL] Значение \"" << value << "\" " << (sll.search(value) ? "найдено" : "не найдено") << endl;
     }
 
     // dll
@@ -168,60 +138,42 @@ int main(int argc, char* argv[]) {
         string value;
         ss >> value;
         dll.addHead(value);
-        cout << "[DLL] Вставка в голову: \"" << value << "\"" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLADDT") {
         string value;
         ss >> value;
         dll.addTail(value);
-        cout << "[DLL] Вставка в хвост: \"" << value << "\"" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLADDF") {
         string value, target;
         ss >> value >> target;
         dll.addBeforeValue(target, value);
-        cout << "[DLL] Вставка \"" << value << "\" перед \"" << target << "\"" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLADDB") {
         string value, target;
         ss >> value >> target;
         dll.addAfterValue(target, value);
-        cout << "[DLL] Вставка \"" << value << "\" после \"" << target << "\"" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLDELH") {
         dll.deleteHead();
-        cout << "[DLL] Удаление головы" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLDELT") {
         dll.deleteTail();
-        cout << "[DLL] Удаление хвоста" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLDELF") {
         string target;
         ss >> target;
         dll.deleteBeforeValue(target);
-        cout << "[DLL] Удаление перед \"" << target << "\"" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLDELB") {
         string target;
         ss >> target;
         dll.deleteAfterValue(target);
-        cout << "[DLL] Удаление после \"" << target << "\"" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLDELV") {
         string value;
         ss >> value;
         dll.deleteValue(value);
-        cout << "[DLL] Удаление значения \"" << value << "\"" << endl;
-        dll.saveToFile();
     }
     else if (cmd == "DLLREADF") {
         dll.readForward();
@@ -232,7 +184,7 @@ int main(int argc, char* argv[]) {
     else if (cmd == "DLLFINDV") {
         string value;
         ss >> value;
-        cout << "[DLL] Значение \"" << value << "\" " << (dll.search(value) ? "найдено" : "не найдено") << endl;
+        cout << value << "\" " << (dll.search(value) ? "найдено" : "не найдено") << endl;
     }
 
     // stack
@@ -240,8 +192,6 @@ int main(int argc, char* argv[]) {
         string val;
         ss >> val;
         st.push(val);
-        cout << "[STACK] Вставка: \"" << val << "\"" << endl;
-        st.saveToFile();
     }
     else if (cmd == "STPOP") {
         if (!st.isEmpty()) {
@@ -282,15 +232,11 @@ int main(int argc, char* argv[]) {
         int i;
         ss >> i;
         brt.brtInsert(i);
-        cout << "[BRT] Вставка: " << i << endl;
-        brt.saveToFile();
     }
     else if (cmd == "BRTDEL") {
         int i;
         ss >> i;
         brt.brtRemove(i);
-        cout << "[BRT] Удаление: " << i << endl;
-        brt.saveToFile();
     }
     else if (cmd == "BRTREAD") {
         brt.inorder();
@@ -303,3 +249,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+

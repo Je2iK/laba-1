@@ -1,7 +1,10 @@
 #ifndef BRT_H
 #define BRT_H
 #include <iostream>
+#include <vector>
+#include "../json.hpp"
 using namespace std;
+using json = nlohmann::json;
 enum node_colors{RED, BLACK};
 
 struct Node{
@@ -27,6 +30,11 @@ public:
         void loadFromFile();
         void saveinorderrec(Node* n, ofstream& file);
         void saveToFile();
+        
+        vector<pair<int, string>> toVector() const;
+        void fromVector(const vector<pair<int, string>>& data);
+        json toJson() const;
+        void fromJson(const json& j);
 private:
         Node* grandparent(Node* n);
         Node* uncle(Node* n);
@@ -45,8 +53,9 @@ private:
         void deleteCase4(Node* n);
         void deleteCase5(Node* n);
         void deleteCase6(Node* n);
-
         
+        void toVectorRec(Node* n, vector<pair<int, string>>& result) const;
+        void clear(Node* n);
     };    
 
 #endif

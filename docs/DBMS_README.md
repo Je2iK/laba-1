@@ -1,0 +1,26 @@
+./dbms --file data.json --query 'MPUSHEND myarray value1'
+./dbms --file data.json --query 'MPUSHI myarray value0 0'
+./dbms --file data.json --query 'MREAD myarray'
+./dbms --file data.json --query 'SLLADDH mysll head'
+./dbms --file data.json --query 'SLLADDT mysll tail'
+./dbms --file data.json --query 'SLLADDF mysll before head'
+./dbms --file data.json --query 'SLLREAD mysll'
+
+./dbms --file data.json --query 'DLLADDH mydll center'
+./dbms --file data.json --query 'DLLADDF mydll left center'
+./dbms --file data.json --query 'DLLADDB mydll right center'
+./dbms --file data.json --query 'DLLREADF mydll'
+./dbms --file data.json --query 'DLLREADB mydll'
+./dbms --file data.json --query 'BRTINSERT mytree 5'
+./dbms --file data.json --query 'BRTINSERT mytree 3'
+./dbms --file data.json --query 'BRTINSERT mytree 7'
+./dbms --file data.json --query 'BRTREAD mytree'
+
+./dbms --file data.json --query 'STPUSH mystack item1'
+./dbms --file data.json --query 'STPUSH mystack item2'
+./dbms --file data.json --query 'STPOP mystack'
+
+
+./dbms --file data.json --query 'QPUSH myqueue elem1'
+./dbms --file data.json --query 'QPUSH myqueue elem2'
+./dbms --file data.json --query 'QPOP myqueue'

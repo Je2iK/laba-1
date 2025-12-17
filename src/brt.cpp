@@ -308,3 +308,48 @@ void BRT::saveToFile(){
     file.close();
 }
 
+vector<pair<int, string>> BRT::toVector() const {
+    vector<pair<int, string>> result;
+    toVectorRec(root, result);
+    return result;
+}
+
+void BRT::toVectorRec(Node* n, vector<pair<int, string>>& result) const {
+    if (!n) return;
+    toVectorRec(n->l, result);
+    result.push_back({n->key, n->color == RED ? "R" : "B"});
+    toVectorRec(n->r, result);
+}
+
+void BRT::fromVector(const vector<pair<int, string>>& data) {
+    clear(root);
+    root = nullptr;
+    for (const auto& item : data) {
+        brtInsert(item.first);
+    }
+}
+
+json BRT::toJson() const {
+    json result = json::array();
+    vector<pair<int, string>> data = toVector();
+    for (const auto& item : data) {
+        result.push_back(item.first);
+    }
+    return result;
+}
+
+void BRT::fromJson(const json& j) {
+    clear(root);
+    root = nullptr;
+    for (const auto& key : j) {
+        brtInsert(key);
+    }
+}
+
+void BRT::clear(Node* n) {
+    if (!n) return;
+    clear(n->l);
+    clear(n->r);
+    delete n;
+}
+

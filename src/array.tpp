@@ -4,7 +4,7 @@
 #include "include/array.h"
 
 template<typename T>
-Array<T>::Array(size_t size) : data(new T[size]), size(size), capacity(size) {}
+Array<T>::Array(size_t cap) : data(new T[cap]), size(0), capacity(cap) {}
 
 template<typename T>
 Array<T>::Array(const Array& arr) : data(new T[arr.size]), size(arr.size), capacity(arr.capacity) {

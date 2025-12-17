@@ -1,23 +1,13 @@
-# Compiled Object files
 *.o
 *.obj
 o-files/
-
-# Executables
 program
 *.exe
 *.out
 
-# Text files (data)
-txt/
-
-# IDE and Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# System files
-.DS_Store
-Thumbs.db

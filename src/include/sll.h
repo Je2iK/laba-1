@@ -7,7 +7,7 @@
 
 template <typename T>
 class SinglyLinkedList {
-private:
+public:
     struct Node {
         T value;
         Node* next;
@@ -16,7 +16,6 @@ private:
 
     Node* head; // указатель на первый элемент
 
-public:
     // Конструктор
     SinglyLinkedList() : head(nullptr) {}
 

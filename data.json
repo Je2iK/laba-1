@@ -1,0 +1,50 @@
+{
+  "arrays": {
+    "10": null,
+    "myarray": [
+      "value0",
+      "value0",
+      "10",
+      "value0",
+      "dsdfsf",
+      "value0",
+      "value1",
+      "value1",
+      "value1",
+      "value1"
+    ],
+    "test_array": [
+      "hello"
+    ]
+  },
+  "dlists": {
+    "mydll": [
+      "center"
+    ]
+  },
+  "queues": {
+    "myqueue": [
+      "elem1"
+    ]
+  },
+  "slists": {
+    "mysll": [
+      "head"
+    ]
+  },
+  "stacks": {
+    "mystack": [
+      "item2",
+      "item1"
+    ]
+  },
+  "trees": {
+    "mytree": [
+      10
+    ],
+    "newtree": [],
+    "testtree": [
+      42
+    ]
+  }
+}

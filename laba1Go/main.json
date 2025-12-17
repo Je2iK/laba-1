@@ -1,0 +1,43 @@
+{
+  "arrays": {
+    "myarray": [
+      "val0",
+      "val1",
+      "newval"
+    ]
+  },
+  "stacks": {
+    "mystack": [
+      "item1"
+    ]
+  },
+  "queues": {
+    "myqueue": [
+      "elem2"
+    ]
+  },
+  "slists": {
+    "mysll": [
+      "first",
+      "middle",
+      "last"
+    ]
+  },
+  "dlists": {
+    "mydll": [
+      "left",
+      "center",
+      "right"
+    ]
+  },
+  "trees": {
+    "mytree": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      9
+    ]
+  }
+}
